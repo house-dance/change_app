@@ -1,0 +1,16 @@
+<p>計算をするので数字を入力してください。</p> 
+<%= form_with model: @change do |f| %> 
+<p> 
+
+ <%= f.label :'支払額' %><br>
+ <%= f.number_field :price %>
+
+</p>
+<p><%= f.label :'何円払いますか？' %><br> 
+
+<%= f.number_field :pay%>
+</p>
+<p> 
+<%= f.submit 'お釣りを見る' %>
+</p>
+<% end %>
