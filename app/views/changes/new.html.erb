@@ -1,16 +1,24 @@
-<p>計算をするので数字を入力してください。</p> 
-<%= form_with model: @change do |f| %> 
-<p> 
+<div class='change-new-wrapper'>
+  <div class='container'>
+    <div class="row"></div>
+      <div class="col-4 offset-4">
+        <p class='mt-1'>計算をするので数字を入力してください。</p> 
+          <%= form_with model: @change, local: true do |f| %> 
+            <div class="form-group">
+              <%= f.label :'価格' %>
+              <%= f.number_field :price, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :'何円払いますか？' %> 
+              <%= f.number_field :pay, class: 'form-control mb-5' %>
+            </div>
+            <%= f.submit 'お釣りを見る', class: 'btn btn-secondary form-control' %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
- <%= f.label :'支払額' %><br>
- <%= f.number_field :price %>
 
-</p>
-<p><%= f.label :'何円払いますか？' %><br> 
 
-<%= f.number_field :pay%>
-</p>
-<p> 
-<%= f.submit 'お釣りを見る' %>
-</p>
-<% end %>
+

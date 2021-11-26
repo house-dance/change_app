@@ -1,16 +1,44 @@
-<p>お釣り</p>
-<%= @result %>
-<br>
+<div class="container">
 
-<th>
-  <td><%= '1000円札: ' + @thousand.to_s %></td>
-  <br>
-  <td><%= '100円玉 : ' + @hundred.to_s %></td>
-  <br>
-  <td><%= '10円玉  : ' + @ten.to_s %></td>
-  <br>
-  <td><%= '5円玉   : ' + @five.to_s %></td>
-  <br>
-  <td><%= '1円玉   : ' + @one.to_s %></td>
-  <br>
-</th>
+  <div class="row">
+    <div class="col-4 offset-4">
+      <div class='bg-secondary text-white my-3'>
+        <%= "お釣りは#{@result}円です" %>
+      </div>
+    </div>
+  </div>
+
+<div class="row">
+  <table class='table col-4 offset-4'>
+    <tr>
+      <th>お金</th> <td>枚数</td>
+    </tr>
+
+    <tr>
+      <th>1000円札</th> <td><%= @thousand.to_s %></td>
+    </tr>
+
+    <tr>
+      <th>500円玉</th> <td><%= @fivehun.to_s %></td>
+    </tr>
+
+    <tr>
+      <th>100円玉</th> <td><%= @hundred.to_s %></td>
+    </tr>
+
+    <tr>
+      <th>10円玉</th> <td><%= @ten.to_s %></td>
+    </tr>
+
+    <tr>
+      <th>5円玉</th> <td><%= @five.to_s %></td>
+    </tr>
+
+    <tr>
+      <th>1円玉</th> <td><%= @one.to_s %></td>
+    </tr>
+</table>
+</div>
+
+
+</div>

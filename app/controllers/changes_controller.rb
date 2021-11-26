@@ -1,6 +1,7 @@
 class ChangesController < ApplicationController
   def new
     @change = Change.new
+    @price = rand(500..10000)
   end
 
   def create
@@ -14,10 +15,11 @@ class ChangesController < ApplicationController
     @result = change.pay - change.price
 
     @thousand = @result / 1000
-    @hundred = (@result - (@thousand * 1000)) / 100
-    @ten = (@result - (@thousand * 1000) - (@hundred * 100)) / 10
-    @five = (@result - (@thousand * 1000) - (@hundred * 100) - (@ten * 10)) / 5
-    @one = (@result - (@thousand * 1000) - (@hundred * 100) - (@ten * 10) - (@five * 5))
+    @fivehun = (@result - (@thousand * 1000)) / 500
+    @hundred = (@result - (@thousand * 1000) - (@fivehun * 500)) / 100
+    @ten =     (@result - (@thousand * 1000) - (@fivehun * 500) - (@hundred * 100)) / 10
+    @five =    (@result - (@thousand * 1000) - (@fivehun * 500)- (@hundred * 100) - (@ten * 10)) / 5
+    @one =     (@result - (@thousand * 1000) - (@fivehun * 500)- (@hundred * 100) - (@ten * 10) - (@five * 5))
   end
   
   private
