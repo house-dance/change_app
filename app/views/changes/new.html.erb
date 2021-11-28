@@ -4,12 +4,13 @@
       <div class="col-4 offset-4">
         <p class='mt-1'>計算をするので数字を入力してください。</p> 
           <%= form_with model: @change, local: true do |f| %> 
+            <%= render 'shared/error_messages', object: f.object %>
             <div class="form-group">
-              <%= f.label :'価格' %>
-              <%= f.number_field :price, class: 'form-control' %>
+              <%= f.label :'値段' %>
+              <%= f.number_field :price, class: 'form-control', value: @rand_price %>
             </div>
             <div class="form-group">
-              <%= f.label :'何円払いますか？' %> 
+              <%= f.label :'何円支払いますか？' %> 
               <%= f.number_field :pay, class: 'form-control mb-5' %>
             </div>
             <%= f.submit 'お釣りを見る', class: 'btn btn-secondary form-control' %>

@@ -1,13 +1,16 @@
 class ChangesController < ApplicationController
   def new
     @change = Change.new
-    @price = rand(500..10000)
+    @rand_price = rand(501..9999)
   end
 
   def create
     @change = Change.new(change_params)
-    @change.save
-    redirect_to change_path(@change)
+    if @change.save
+      redirect_to change_path(@change)
+    else
+      render :new
+    end
   end
 
   def show

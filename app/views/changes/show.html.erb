@@ -8,37 +8,44 @@
     </div>
   </div>
 
-<div class="row">
-  <table class='table col-4 offset-4'>
-    <tr>
-      <th>お金</th> <td>枚数</td>
-    </tr>
+  <div class="row">
+    <table class='table col-4 offset-4'>
+      <tr>
+        <th>お金</th> <td>枚数</td>
+      </tr>
 
-    <tr>
-      <th>1000円札</th> <td><%= @thousand.to_s %></td>
-    </tr>
+      <tr>
+        <th>1000円札</th> <td><%= @thousand.to_s %></td>
+      </tr>
 
-    <tr>
-      <th>500円玉</th> <td><%= @fivehun.to_s %></td>
-    </tr>
+      <tr>
+        <th>500円玉</th> <td><%= @fivehun.to_s %></td>
+      </tr>
 
-    <tr>
-      <th>100円玉</th> <td><%= @hundred.to_s %></td>
-    </tr>
+      <tr>
+        <th>100円玉</th> <td><%= @hundred.to_s %></td>
+      </tr>
 
-    <tr>
-      <th>10円玉</th> <td><%= @ten.to_s %></td>
-    </tr>
+      <tr>
+        <th>10円玉</th> <td><%= @ten.to_s %></td>
+      </tr>
 
-    <tr>
-      <th>5円玉</th> <td><%= @five.to_s %></td>
-    </tr>
+      <tr>
+        <th>5円玉</th> <td><%= @five.to_s %></td>
+      </tr>
 
-    <tr>
-      <th>1円玉</th> <td><%= @one.to_s %></td>
-    </tr>
-</table>
-</div>
+      <tr>
+        <th>1円玉</th> <td><%= @one.to_s %></td>
+      </tr>
+    </table>
+  </div>
 
+  <div class="row">
+    <div class="col-4 offset-4">
+      <div class='ml-3 my-3'>
+        <%= link_to 'はじめに戻る', root_path %>
+      </div>
+    </div>
+  </div>
 
 </div>
